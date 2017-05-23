@@ -4,7 +4,7 @@ DR = 60;	% dynamic range (動態範圍) of the image
                 % 因Sonosite無法顯示使用的動態範圍(通常會顯示在其他系統的原始影像上),可直接使用DR=60
 			
 % 在MATLAB中,imread進來的影像資料 data type 為 "uint8"
-OriIm = imread('57-high-res.bmp');
+OriIm = imread('57-high-pen.bmp');
 %GrayIm = rgb2gray(OriIm);	% rgb to gray scale, data type : uint8
 
 % 在MATLAB中，+,-,*,/等數值運算或函式只能使用於data type為double的資料上，
@@ -29,7 +29,7 @@ dBIm = dBIm*DR;							% to dB, 0 - DR
 X = 105;
 Y = 120;
 W = 30;
-H = 30;
+H = 20;
 
 % show B-mode image
 fig_hw2_1 = figure();
