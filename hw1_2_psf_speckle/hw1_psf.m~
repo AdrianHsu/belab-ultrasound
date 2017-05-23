@@ -18,7 +18,7 @@ GrayIm = double(OriIm);
 
 % 將原始影像上，真正屬於仿體影像的部份取出，不同的影像取的區域不同，
 % 請自己找出自己擷取影像真正屬於仿體影像的部份
-GrayIm = GrayIm(45:428,200:452); %57, (y1:y2,x1:x2)
+GrayIm = GrayIm(45:428,200:452); %57
 
 % gray to dB 由0-255的灰階轉成 dB
 dBIm = GrayIm - min(min(GrayIm));	% set min value to 0
@@ -79,7 +79,6 @@ idx = find(ptLalProj >= -6 );	% find the indexes of the values, >= -6 dB
 lastidx = (-6 - ptLalProj(idx(end)))/(ptLalProj(idx(end)+1) - ptLalProj(idx(end)))+idx(end);
 firstidx = idx(1) - (-6 - ptLalProj(idx(1)))/(ptLalProj(idx(1)-1) - ptLalProj(idx(1)));
 Width6dBLal = lastidx - firstidx;
-
 
 % 以axis projection求軸向上PSF size
 % 幾乎與lateral projection一樣的求法
