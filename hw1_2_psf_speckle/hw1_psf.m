@@ -7,10 +7,12 @@ str_enum = ["57-high-pen", "57-high-res", "57-low-pen", "57-low-res", "71-high-p
 dim = [42 428 200 452]; %57, [y1 y2 x1 x2]
 xywh_in = [205 135 30 20]; %57 in
 xywh_out = [205 340 30 20]; %57 out
-xywh = [xywh_in;xywh_out];
 
 % dim = [45 430 227 425]; %71
-% xywh = [105 120 30 20]; %71
+% xywh_in = [155 158 30 20]; %71 in
+% xywh_out = [155 325 30 20]; %71 out
+
+xywh = [xywh_in;xywh_out];
 
 tmp = strcat(str_enum(ENUM), '.bmp');
 OriIm = imread(char(tmp));

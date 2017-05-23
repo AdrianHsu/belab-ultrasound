@@ -1,16 +1,16 @@
 clear;
 
 DR = 60;
-ENUM = 2;
+ENUM = 6;
 str_enum = ["57-high-pen", "57-high-res", "57-low-pen", "57-low-res", "71-high-pen", "71-high-res", "71-low-pen", "71-low-res"];
 
-dim = [42 428 200 452]; %57, [y1 y2 x1 x2]
-xywh_in = [205 135 30 20]; %57 in
-xywh_out = [205 340 30 20]; %57 out
+% dim = [42 428 200 452]; %57, [y1 y2 x1 x2]
+% xywh_in = [205 135 30 20]; %57 in
+% xywh_out = [205 340 30 20]; %57 out
+dim = [45 430 227 425]; %71
+xywh_in = [105 120 30 20]; %71
+xywh_out = [105 320 30 20]; %71
 xywh = [xywh_in;xywh_out];
-
-% dim = [45 430 227 425]; %71
-% xywh = [105 120 30 20]; %71
 
 tmp = strcat(str_enum(ENUM), '.bmp');
 OriIm = imread(char(tmp));
@@ -21,7 +21,7 @@ dBIm = GrayIm - min(min(GrayIm));	% set min value to 0
 dBIm = dBIm/max(max(dBIm));			% normalization, 0 - 1
 dBIm = dBIm*DR;							% to dB, 0 - DR
 
-table = {};
+table = [];
 for i = 1:2
     % show B-mode image
     fig = figure();
@@ -74,7 +74,7 @@ for i = 1:2
     end
     Width6dBAxi = lastidx - firstidx;
     tmp = [Width6dBLal Width6dBAxi];
-    table = [table; tmp];
+    table = [table;tmp];
 end
-csv = cell2table(table,'VariableNames', {'Lal', 'Axi'} );
+csv = array2table(table,'VariableNames', {'Lateral', 'Axial'} );
 writetable(csv,'data.csv');
