@@ -1,6 +1,3 @@
-% B-mode 影像實驗的範例程式
-% 若不清楚所使用之MATLAB指令，請查MATLAB help
-% Edited by M.-L. Li 05/14/2002
 clear;
 
 DR = 60;	% dynamic range (動態範圍) of the image		
@@ -12,8 +9,13 @@ OriIm = imread('57-high-res.bmp');
 
 % 在MATLAB中，+,-,*,/等數值運算或函式只能使用於data type為double的資料上，
 % 因此，在此先將uint8的data type轉成"double"
-GrayIm = double(OriIm);	
-% figure,imagesc(GrayIm), colormap(gray)
+GrayIm = double(OriIm);
+
+% figure,imagesc(GrayIm), colormap(gray); 
+% fig_hw1_1 = figure();
+% set (fig_hw1_1,'Visible','off');
+% imagesc(GrayIm), colormap(gray);
+% saveas(fig_hw1_1,'fig_hw1_1.jpg');
 
 % 將原始影像上，真正屬於仿體影像的部份取出，不同的影像取的區域不同，
 % 請自己找出自己擷取影像真正屬於仿體影像的部份
@@ -23,37 +25,32 @@ GrayIm = GrayIm(45:428,200:452); %57
 dBIm = GrayIm - min(min(GrayIm));	% set min value to 0
 dBIm = dBIm/max(max(dBIm));			% normalization, 0 - 1
 dBIm = dBIm*DR;							% to dB, 0 - DR
-
-% show B-mode image
-
-% % % % % % % % % % % figure
-image(dBIm)
-colormap(gray(DR))
-axis image
-% 1
-% X = 205;
-% Y = 125;
-% W = 30;
-% H = 30;
 % 2
 X = 105;
 Y = 120;
 W = 30;
 H = 30;
 
+% show B-mode image
+fig_hw2_1 = figure();
+set (fig_hw2_1,'Visible','off');
+image(dBIm)
+colormap(gray(DR))
+axis image
 rectangle('Position' , [X Y W H] , 'Edgecolor' , 'r') % [x y w h]
-
 colorbar
 title('B-mode image, dynamic range = 50dB')
+saveas(fig_hw2_1,'fig_hw2_1.jpg');
 
+% 
 % ------------------ speckle std ------------------
 % 計算speckle的標準差?
 % 將影像上均質的部份選出來計算speckle std
 % 可與理論值 4.34 dB做個驗證
-speIm = dBIm(Y:Y+H, X:X+W);
-figure,imagesc(speIm), colormap(gray)
-speckleStd = std(speIm(:));
 
+speIm = dBIm(Y:Y+H, X:X+W);
+% figure,imagesc(speIm), colormap(gray)
+speckleStd = std(speIm(:));
                                           
 % -------------------- speckle histogram -----------------------                                         
 % dB to linear, 計算histogram前，得先將dB資料，轉為原來的linear的資料格式
@@ -71,10 +68,16 @@ LinearIm_E = 10 .^ (speIm/20);	% amplitude 為 10.^(圖像dB值/20)
 
 LinearIm_I = LinearIm_I(:);
 LinearIm_E = LinearIm_E(:);
-figure
+
 % 請先把 LinearIm_I 以及 LinearIm_E 變成column vector, 再使用hist指令畫出機率分布圖
+fig_hw2_2 = figure();
+set (fig_hw2_2,'Visible','off');
 hist(LinearIm_I);	% 像expenential distribution嗎?
 title('Speckle Intensity Distribution');xlabel('I');ylabel('P_I')
-figure
+saveas(fig_hw2_2,'fig_hw2_2.jpg');
+
+fig_hw2_3 = figure();
+set (fig_hw2_3, 'Visible', 'off');
 hist(LinearIm_E);	% 像Reyleigh distribution嗎?
 title('Speckle Amplitude Distribution');xlabel('E');ylabel('P_E')
+saveas(fig_hw2_3,'fig_hw2_3.jpg');

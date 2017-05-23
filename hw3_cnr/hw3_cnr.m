@@ -3,7 +3,7 @@ DR=60;
 OriIm = imread('-6-15_low_pen.bmp');
 GrayIm = rgb2gray(OriIm);
 GrayIm = double(GrayIm);
-figure;imagesc(GrayIm);colormap(gray)
+% figure;imagesc(GrayIm);colormap(gray)
 
 % 將原始影像上，真正屬於仿體影像的部份取出，不同的影像取的區域不同，
 % 請自己找出自己擷取影像真正屬於仿體影像的部份
@@ -13,7 +13,9 @@ GrayIm = GrayIm(45:430, 227:425); %-6-15
 dBIm = GrayIm - min(min(GrayIm));	% set min value to 0
 dBIm = dBIm/max(max(dBIm));			% normalization, 0 - 1
 dBIm = dBIm*DR;
-figure
+
+fig_hw3_1 = figure();
+set (fig_hw3_1, 'Visible', 'off');
 image(dBIm)
 colormap(gray(DR))
 rectangle('Position' , [45 260 25 50] , 'Edgecolor' , 'r')
@@ -21,6 +23,7 @@ rectangle('Position' , [100 140 15 50] , 'Edgecolor' , 'r')
 axis image
 colorbar
 title('B-mode image')
+saveas(fig_hw3_1,'fig_hw3_1.jpg');
 
 InIm = dBIm(260:310 , 45:70);
 OutIm = dBIm(140:190 , 100:115);

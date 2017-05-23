@@ -10,7 +10,11 @@ OriIm = imread('57-high-res.bmp');
 % 在MATLAB中，+,-,*,/等數值運算或函式只能使用於data type為double的資料上，
 % 因此，在此先將uint8的data type轉成"double"
 GrayIm = double(OriIm);	
-figure,imagesc(GrayIm), colormap(gray)
+% figure,imagesc(GrayIm), colormap(gray); 
+fig_hw1_1 = figure();
+set (fig_hw1_1,'Visible','off');
+imagesc(GrayIm), colormap(gray);
+saveas(fig_hw1_1,'fig_hw1_1.jpg');
 
 % 將原始影像上，真正屬於仿體影像的部份取出，不同的影像取的區域不同，
 % 請自己找出自己擷取影像真正屬於仿體影像的部份
@@ -21,26 +25,22 @@ dBIm = GrayIm - min(min(GrayIm));	% set min value to 0
 dBIm = dBIm/max(max(dBIm));			% normalization, 0 - 1
 dBIm = dBIm*DR;							% to dB, 0 - DR
 
-% show B-mode image
-figure
-image(dBIm)
-colormap(gray(DR))
-axis image
 % 1
 X = 205;
 Y = 125;
 W = 30;
 H = 30;
-% 2
-% X = 105;
-% Y = 120;
-% W = 30;
-% H = 30;
-
+% show B-mode image
+fig_hw1_2 = figure();
+set (fig_hw1_2,'Visible','off');
+image(dBIm)
+colormap(gray(DR))
+axis image
 rectangle('Position' , [X Y W H] , 'Edgecolor' , 'r') % [x y w h]
-
 colorbar
 title('B-mode image, dynamic range = 50dB')
+saveas(fig_hw1_2,'fig_hw1_2.jpg');
+
 % 
 % ---------------------  estimate PSF size  -----------------
 % 請比較不同深度上的點，PSF size有無差別?
@@ -53,15 +53,20 @@ ImPt = dBIm(Y:Y+H,X:X+W);    % 請輸入範圍 %[y1:y2, x1:x2], y2-y1=20, x2-x1=30
 ptLalProj = max(ImPt) - max(max(ImPt)); % normalise, in dB
 
 % show lateral projection
-figure
+fig_hw1_3 = figure();
+set (fig_hw1_3,'Visible','off');
 plot(ptLalProj)
 title('lateral projection')
+saveas(fig_hw1_3,'fig_hw1_3.jpg');
 
 % axial projection
 ptAxiProj =  max(ImPt,[],2) - max(max(ImPt,[],2));   % 請transpose 點影像, 再取與lateral projection相同的計算方式
-figure
+
+fig_hw1_4 = figure();
+set (fig_hw1_4,'Visible','off');
 plot(ptAxiProj)
 title('axial projection')
+saveas(fig_hw1_4,'fig_hw1_4.jpg');
 
 % 計算 lateral projection 的-6dB寬度. 此為psf size 
 idx = find(ptLalProj >= -6 );	% find the indexes of the values, >= -6 dB
