@@ -1,63 +1,80 @@
 clear;
 
 DR = 60;
-dim57 = [42 428 200 452];
-xywh = [205 125 30 20];
-OriIm = imread('57-high-pen.bmp');
+ENUM = 2;
+str_enum = ["57-high-pen", "57-high-res", "57-low-pen", "57-low-res", "71-high-pen", "71-high-res", "71-low-pen", "71-low-res"];
+
+dim = [42 428 200 452]; %57, [y1 y2 x1 x2]
+xywh_in = [205 135 30 20]; %57 in
+xywh_out = [205 340 30 20]; %57 out
+xywh = [xywh_in;xywh_out];
+
+% dim = [45 430 227 425]; %71
+% xywh = [105 120 30 20]; %71
+
+tmp = strcat(str_enum(ENUM), '.bmp');
+OriIm = imread(char(tmp));
 GrayIm = double(OriIm);
-GrayIm = GrayIm(dim57(1):dim57(2),dim57(3):dim57(4)); %57
+GrayIm = GrayIm(dim(1):dim(2),dim(3):dim(4));
+
 dBIm = GrayIm - min(min(GrayIm));	% set min value to 0
 dBIm = dBIm/max(max(dBIm));			% normalization, 0 - 1
 dBIm = dBIm*DR;							% to dB, 0 - DR
 
-% show B-mode image
-fig_hw1_2 = figure();
-set (fig_hw1_2,'Visible','off');
-image(dBIm)
-colormap(gray(DR))
-axis image
-rectangle('Position' , [xywh(1), xywh(2), xywh(3), xywh(4)] , 'Edgecolor' , 'r') % [x y w h]
-colorbar;
-title('B-mode image, dynamic range = 50dB')
-saveas(fig_hw1_2,'fig_hw1_2.jpg');
-
-ImPt = dBIm(xywh(2):xywh(2)+xywh(4), xywh(1):xywh(1)+xywh(3));
-% 以lateral projection求橫向上的PSF size
-ptLalProj = max(ImPt) - max(max(ImPt)); % normalise, in dB
-
-% show lateral projection
-fig_hw1_3 = figure();
-set (fig_hw1_3,'Visible','off');
-plot(ptLalProj)
-title('lateral projection')
-saveas(fig_hw1_3,'fig_hw1_3.jpg');
-
-% show axial projection
-ptAxiProj =  max(ImPt,[],2) - max(max(ImPt,[],2));   % 請transpose 點影像, 再取與lateral projection相同的計算方式
-
-fig_hw1_4 = figure();
-set (fig_hw1_4,'Visible','off');
-plot(ptAxiProj)
-title('axial projection')
-saveas(fig_hw1_4,'fig_hw1_4.jpg');
-
-% 計算 lateral projection 的-6dB寬度. 此為psf size
-idx = find(ptLalProj >= -6 );	% find the indexes of the values, >= -6 dB
-% !!!!!!!!!!! 近似求法，請以較準確的方法求出-6dB寬度?
-% Width6dB = idx(end) - idx(1); % -6 dB width in index, !!! 此為近似的求法 (相當不準確)
-							  % 因idx(end)與idx(1)所對應的值未必恰好等於 -6 dB，
-                              % 要準確的求出-6dB寬度，至少得將對應-6 dB的index值內插出來再求
-                              % 此外要注意，此時求出來的寬度僅為相差的index大小
-                              % 若要換算成實際的單位如 mm，得找出兩個連續index間實際間隔多少mm          
-lastidx = (-6 - ptLalProj(idx(end)))/(ptLalProj(idx(end)+1) - ptLalProj(idx(end)))+idx(end);
-firstidx = idx(1) - (-6 - ptLalProj(idx(1)))/(ptLalProj(idx(1)-1) - ptLalProj(idx(1)));
-Width6dBLal = lastidx - firstidx;
+table = {};
+for i = 1:2
+    % show B-mode image
+    fig = figure();
+    set (fig,'Visible','off');
+    subplot(2,2,[1,2]);
+    image(dBIm)
+    colormap(gray(DR))
+    axis image
+    rectangle('Position' , [xywh(i,1), xywh(i,2), xywh(i,3), xywh(i,4)] , 'Edgecolor' , 'r') % [x y w h]
+    colorbar;
+    title('B-mode image, dynamic range = 50dB')
+    ImPt = dBIm(xywh(i,2):xywh(i,2)+xywh(i,4), xywh(i,1):xywh(i,1)+xywh(i,3));
+    ptLalProj = max(ImPt) - max(max(ImPt));
+    subplot(2,2,3);
+    plot(ptLalProj);
+    title('lateral projection')
+    ptAxiProj =  max(ImPt,[],2) - max(max(ImPt,[],2)); 
+    subplot(2,2,4);
+    plot(ptAxiProj)
+    title('axial projection')
+    ch = strcat(int2str(i),'.jpg');
+    tmp = strcat(str_enum(ENUM), ch);
+    saveas(fig, char(tmp));
 
 
-% 以axis projection求軸向上PSF size
-% 幾乎與lateral projection一樣的求法
-idx = find(ptAxiProj >= -6 );	% find the indexes of the values, >= -6 dB
-% !!!!!!!!!!! 近似求法，請以較準確的方法求出-6dB寬度?
-lastidx = (-6 - ptAxiProj(idx(end)))/(ptAxiProj(idx(end)+1) - ptAxiProj(idx(end)))+idx(end);
-firstidx = idx(1) - (-6 - ptAxiProj(idx(1)))/(ptAxiProj(idx(1)-1) - ptAxiProj(idx(1)));
-Width6dBAxi = lastidx - firstidx;
+    idx = find(ptLalProj >= -6);	% find the indexes of the values, >= -6 dB
+    if idx(end) == size(ptLalProj, 2)
+        lastidx = idx(end);
+    else 
+        lastidx = (-6 - ptLalProj(idx(end)))/(ptLalProj(idx(end)+1) - ptLalProj(idx(end)))+idx(end);
+    end
+    if idx(1) == 1
+        firstidx = 1;
+    else 
+        firstidx = idx(1) - (-6 - ptLalProj(idx(1)))/(ptLalProj(idx(1)-1) - ptLalProj(idx(1)));
+    end
+    Width6dBLal = lastidx - firstidx;
+
+
+    idx = find(ptAxiProj >= -6 );	% find the indexes of the values, >= -6 dB
+    if idx(end) == size(ptAxiProj, 1)
+        lastidx = idx(end);
+    else 
+        lastidx = (-6 - ptAxiProj(idx(end)))/(ptAxiProj(idx(end)+1) - ptAxiProj(idx(end)))+idx(end);
+    end
+    if idx(1) == 1
+        firstidx = 1;
+    else
+        firstidx = idx(1) - (-6 - ptAxiProj(idx(1)))/(ptAxiProj(idx(1)-1) - ptAxiProj(idx(1)));
+    end
+    Width6dBAxi = lastidx - firstidx;
+    tmp = [Width6dBLal Width6dBAxi];
+    table = [table; tmp];
+end
+csv = cell2table(table,'VariableNames', {'Lal', 'Axi'} );
+writetable(csv,'data.csv');
