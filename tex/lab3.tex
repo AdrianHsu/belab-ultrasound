@@ -19,7 +19,7 @@
 \setCJKmainfont{標楷體} %設定中文為系統上的字型，而英文不去更動，使用原TeX字型
 \XeTeXlinebreaklocale "zh"             %這兩行一定要加，中文才能自動換行
 \XeTeXlinebreakskip = 0pt plus 1pt     %這兩行一定要加，中文才能自動換行
-\title{\emph{生醫工程實驗, Spring 2017}\\ Lab3 超音波醫學影像分析(Ultrasound)}
+\title{\textbf{生醫工程實驗, Spring 2017}\\ Lab3 超音波醫學影像分析(Ultrasound)}
 \author{第五組\ 蔡承佑\ 許博竣\ 許秉鈞}
 \date{May 24, 2017} %日期
 \let\ph\mlplaceholder % shorter macro
@@ -34,9 +34,7 @@
 
 \begin{document}
 \maketitle
-
-
-\section{Point Spread Function(PSF)}
+\section{HW1-Point Spread Function(PSF)}
 \subsection{實驗目的}
 了解超音波醫學影像的原理，並學習操作儀器測量仿體，量測各種不同模式下所觀測到的影
 \subsection{實驗原理}
@@ -48,14 +46,14 @@
 3.用B mode，比較在res與pen模式下的CNR。\\ 4.用都卜勒模式測量人體的大動脈，截取其跳動影像及速率影像。
 
 \subsection{實驗數據}
-\emph{a) Estimate PSF size for In-focused and Out-focused targets}  \\
+\textbf{a) Estimate PSF size for In-focused and Out-focused targets}  \\
 以下用 5.7cm, 7.1cm 深度、 pen/res 模式來測量\\
 \\
-\emph{b) Repeat (a) under different B-mode gain} \\
+\textbf{b) Repeat (a) under different B-mode gain} \\
 
 \pagebreak
 \begin{itemize}
-\item{\emph{5.7cm/high gain/pen}}
+\item{\textbf{5.7cm/high gain/pen}}
 \begin{center}
 \csvautotabular{img_hw1/57-high-pen.csv}
 \end{center}
@@ -74,7 +72,7 @@
 \end{figure}
 \pagebreak
 
-\item{\emph{5.7cm/high gain/res}}
+\item{\textbf{5.7cm/high gain/res}}
 \begin{center}
 \csvautotabular{img_hw1/57-high-res.csv}
 \end{center}
@@ -92,7 +90,7 @@
     \label{fig:mesh1}
 \end{figure}
 \pagebreak
-\item{\emph{5.7cm/low gain/pen}}
+\item{\textbf{5.7cm/low gain/pen}}
 \begin{center}
 \csvautotabular{img_hw1/57-low-pen.csv}
 \end{center}
@@ -110,7 +108,7 @@
     \label{fig:mesh1}
 \end{figure}
 \pagebreak
-\item{\emph{5.7cm/low gain/res}}
+\item{\textbf{5.7cm/low gain/res}}
 \begin{center}
 \csvautotabular{img_hw1/57-low-res.csv}
 \end{center}
@@ -128,7 +126,7 @@
     \label{fig:mesh1}
 \end{figure}
 \pagebreak
-\item{\emph{7.1cm/high gain/pen}}
+\item{\textbf{7.1cm/high gain/pen}}
 \begin{center}
 \csvautotabular{img_hw1/71-high-pen.csv}
 \end{center}
@@ -146,7 +144,7 @@
     \label{fig:mesh1}
 \end{figure}
 \pagebreak
-\item{\emph{7.1cm/high gain/res}}
+\item{\textbf{7.1cm/high gain/res}}
 \begin{center}
 \csvautotabular{img_hw1/71-high-res.csv}
 \end{center}
@@ -164,7 +162,7 @@
     \label{fig:mesh1}
 \end{figure}
 \pagebreak
-\item{\emph{7.1cm/low gain/pen}}
+\item{\textbf{7.1cm/low gain/pen}}
 \begin{center}
 \csvautotabular{img_hw1/71-low-pen.csv}
 \end{center}
@@ -182,7 +180,7 @@
     \label{fig:mesh1}
 \end{figure}
 \pagebreak
-\item{\emph{7.1cm/low gain/res}}
+\item{\textbf{7.1cm/low gain/res}}
 \begin{center}
 \csvautotabular{img_hw1/71-low-res.csv}
 \end{center}
@@ -200,6 +198,239 @@
     \label{fig:mesh1}
 \end{figure}
 \pagebreak
-
 \end{itemize}
+
+\textbf{HW1 CONCLUSION} \\
+\\
+大部分情況，In-focused 的大小都比 Out-focused 來的小，符合我們的預期， 除了少數情況之外，因為我們有些圖其實量的有些不清楚，可能造成在找 6dB 點的時，其真正範圍與觀測範圍不太一樣。
+\section{HW2-Speckle Statistics}
+在 B mode 下，分別以探頭可測最大深度 5.7cm 及 7.1 cm，量測在 high gain 及 low gain 下，比較 pen 與 res 時，in-focused 及 out-focused 的 standard variation，並作出 speckle intensity distribution 及 speckle amplitude distribution。
+
+\begin{itemize}
+\item{\textbf{5.7cm/high gain/pen}}
+\begin{center}
+\csvautotabular{img_hw2/57-high-pen.csv}
+\end{center}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\textwidth]{img_hw2/57-high-pen1.jpg}
+    \caption{57-high-pen(In Focus)}
+    \label{fig:mesh1}
+\end{figure}
+\pagebreak
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\textwidth]{img_hw2/57-high-pen2.jpg}
+    \caption{57-high-pen(Out Focus)}
+    \label{fig:mesh1}
+\end{figure}
+\pagebreak
+\item{\textbf{5.7cm/high gain/res}}
+\begin{center}
+\csvautotabular{img_hw2/57-high-res.csv}
+\end{center}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\textwidth]{img_hw2/57-high-res1.jpg}
+    \caption{57-high-res(In Focus)}
+    \label{fig:mesh1}
+\end{figure}
+\pagebreak
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\textwidth]{img_hw2/57-high-res2.jpg}
+    \caption{57-high-res(Out Focus)}
+    \label{fig:mesh1}
+\end{figure}
+\pagebreak
+\item{\textbf{5.7cm/low gain/pen}}
+\begin{center}
+\csvautotabular{img_hw2/57-low-pen.csv}
+\end{center}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\textwidth]{img_hw2/57-low-pen1.jpg}
+    \caption{57-low-pen(In Focus)}
+    \label{fig:mesh1}
+\end{figure}
+\pagebreak
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\textwidth]{img_hw2/57-low-pen2.jpg}
+    \caption{57-low-pen(Out Focus)}
+    \label{fig:mesh1}
+\end{figure}
+\pagebreak
+\item{\textbf{5.7cm/low gain/res}}
+\begin{center}
+\csvautotabular{img_hw2/57-low-res.csv}
+\end{center}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\textwidth]{img_hw2/57-low-res1.jpg}
+    \caption{57-low-res(In Focus)}
+    \label{fig:mesh1}
+\end{figure}
+\pagebreak
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\textwidth]{img_hw2/57-low-res2.jpg}
+    \caption{57-low-res(Out Focus)}
+    \label{fig:mesh1}
+\end{figure}
+\pagebreak
+\item{\textbf{7.1cm/high gain/pen}}
+\begin{center}
+\csvautotabular{img_hw2/71-high-pen.csv}
+\end{center}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\textwidth]{img_hw2/71-high-pen1.jpg}
+    \caption{71-high-pen(In Focus)}
+    \label{fig:mesh1}
+\end{figure}
+\pagebreak
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\textwidth]{img_hw2/71-high-pen2.jpg}
+    \caption{71-high-pen(Out Focus)}
+    \label{fig:mesh1}
+\end{figure}
+\pagebreak
+\item{\textbf{7.1cm/high gain/res}}
+\begin{center}
+\csvautotabular{img_hw2/71-high-res.csv}
+\end{center}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\textwidth]{img_hw2/71-high-res1.jpg}
+    \caption{71-high-res(In Focus)}
+    \label{fig:mesh1}
+\end{figure}
+\pagebreak
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\textwidth]{img_hw2/71-high-res2.jpg}
+    \caption{71-high-res(Out Focus)}
+    \label{fig:mesh1}
+\end{figure}
+\pagebreak
+\item{\textbf{7.1cm/low gain/pen}}
+\begin{center}
+\csvautotabular{img_hw2/71-low-pen.csv}
+\end{center}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\textwidth]{img_hw2/71-low-pen1.jpg}
+    \caption{71-low-pen(In Focus)}
+    \label{fig:mesh1}
+\end{figure}
+\pagebreak
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\textwidth]{img_hw2/71-low-pen2.jpg}
+    \caption{71-low-pen(Out Focus)}
+    \label{fig:mesh1}
+\end{figure}
+\pagebreak
+\item{\textbf{7.1cm/low gain/res}}
+\begin{center}
+\csvautotabular{img_hw2/71-low-res.csv}
+\end{center}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\textwidth]{img_hw2/71-low-res1.jpg}
+    \caption{71-low-res(In Focus)}
+    \label{fig:mesh1}
+\end{figure}
+\pagebreak
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\textwidth]{img_hw2/71-low-res2.jpg}
+    \caption{71-low-res(Out Focus)}
+    \label{fig:mesh1}
+\end{figure}
+\end{itemize}
+
+\textbf{HW2 CONCLUSION} \\
+\\
+由圖可以發現，intensity 跟 amplitude 大都符合理論的分布，standard deviation 也在理論範圍附近!
+\pagebreak
+\section{HW3-Contrast To Noise Ration(CNR)}
+\subsection{實驗原理}
+用於決定影像解析度高低的基準。強度可被視為訊號而標準差則為噪音。 CNR 的定義為
+\begin{center}
+$CNR=|\frac{I_{in}-I_{out}}{std_{in}-std_{out}}|$
+\end{center}
+\subsection{實驗數據}
+\textbf{a) Estimate CNR at in-focused region and out-focused region} \\
+在 B mode 下，分別以 high gain 及 low gain，量測 pen (in-focused) 及 res (out-focused) 的個點，並計算出其 CNR。
+
+\begin{itemize}
+\item{\textbf{high gain/pen}}
+\begin{center}
+\csvautotabular{img_hw3/high_pen.csv}
+\end{center}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\textwidth]{img_hw3/high_pen.jpg}
+    \caption{high-pen}
+    \label{fig:mesh1}
+\end{figure}
+\pagebreak
+\item{\textbf{high gain/res}}
+\begin{center}
+\csvautotabular{img_hw3/high_res.csv}
+\end{center}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\textwidth]{img_hw3/high_res.jpg}
+    \caption{high-res}
+    \label{fig:mesh1}
+\end{figure}
+\pagebreak
+\item{\textbf{low gain/pen}}
+\begin{center}
+\csvautotabular{img_hw3/low_pen.csv}
+\end{center}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\textwidth]{img_hw3/low_pen.jpg}
+    \caption{low-pen}
+    \label{fig:mesh1}
+\end{figure}
+\pagebreak
+\item{\textbf{low gain/res}}
+\begin{center}
+\csvautotabular{img_hw3/low_res.csv}
+\end{center}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\textwidth]{img_hw3/low_res.jpg}
+    \caption{low-res}
+    \label{fig:mesh1}
+\end{figure}
+\pagebreak
+\end{itemize}
+
+\pagebreak
+\section{HW4-Doppler}
+\subsection{實驗原理}
+在都卜勒模式下，以探頭測量頸動脈的血流，並擷取其 Color Doppler 及 PW 影像。
+\subsection{實驗步驟}
+\textbf{a) Carotid color Doppler and PW images} \\
+\textbf{受測者:蔡承佑} \\
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img_hw4/CPD.jpg}
+    \caption{CPD}
+    \label{fig:mesh1}
+\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img_hw4/CPD-2.jpg}
+    \caption{CPD2}
+    \label{fig:mesh1}
+\end{figure}
+
 \end{document}

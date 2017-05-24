@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.4.22)  24 MAY 2017 23:11
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.4.22)  24 MAY 2017 23:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1063,6 +1063,72 @@ LaTeX Warning: Label `fig:mesh1' multiply defined.
 
 LaTeX Warning: Label `fig:mesh1' multiply defined.
 
+
+LaTeX Warning: Label `fig:mesh1' multiply defined.
+
+
+LaTeX Warning: Label `fig:mesh1' multiply defined.
+
+
+LaTeX Warning: Label `fig:mesh1' multiply defined.
+
+
+LaTeX Warning: Label `fig:mesh1' multiply defined.
+
+
+LaTeX Warning: Label `fig:mesh1' multiply defined.
+
+
+LaTeX Warning: Label `fig:mesh1' multiply defined.
+
+
+LaTeX Warning: Label `fig:mesh1' multiply defined.
+
+
+LaTeX Warning: Label `fig:mesh1' multiply defined.
+
+
+LaTeX Warning: Label `fig:mesh1' multiply defined.
+
+
+LaTeX Warning: Label `fig:mesh1' multiply defined.
+
+
+LaTeX Warning: Label `fig:mesh1' multiply defined.
+
+
+LaTeX Warning: Label `fig:mesh1' multiply defined.
+
+
+LaTeX Warning: Label `fig:mesh1' multiply defined.
+
+
+LaTeX Warning: Label `fig:mesh1' multiply defined.
+
+
+LaTeX Warning: Label `fig:mesh1' multiply defined.
+
+
+LaTeX Warning: Label `fig:mesh1' multiply defined.
+
+
+LaTeX Warning: Label `fig:mesh1' multiply defined.
+
+
+LaTeX Warning: Label `fig:mesh1' multiply defined.
+
+
+LaTeX Warning: Label `fig:mesh1' multiply defined.
+
+
+LaTeX Warning: Label `fig:mesh1' multiply defined.
+
+
+LaTeX Warning: Label `fig:mesh1' multiply defined.
+
+
+LaTeX Warning: Label `fig:mesh1' multiply defined.
+
 )
 \openout1 = `lab3.aux'.
 
@@ -1189,7 +1255,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 \FN@cache198=\box50
 \c@lstlisting=\count161
 
-LaTeX Font Warning: Font shape `EU1/標楷體(0)/m/it' undefined
+LaTeX Font Warning: Font shape `EU1/標楷體(0)/bx/n' undefined
 (Font)              using `EU1/標楷體(0)/m/n' instead on input line 36.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -1199,30 +1265,26 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 36.
 
-LaTeX Font Warning: Font shape `EU1/標楷體(0)/bx/n' undefined
-(Font)              using `EU1/標楷體(0)/m/n' instead on input line 40.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 51--55
+Underfull \hbox (badness 10000) in paragraph at lines 49--53
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 51--55
+Underfull \hbox (badness 10000) in paragraph at lines 49--53
 
  []
 
 [1
 
 ]
-LaTeX Font Info:    Try loading font information for TS1+lmr on input line 58.
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 56.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 60.
+(Font)              <7> on input line 58.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 60.
+(Font)              <5> on input line 58.
 File: img_hw1/57-high-pen1.jpg Graphic file (type QTm)
  <use  "img_hw1/57-high-pen1.jpg" > [2]
 File: img_hw1/57-high-pen2.jpg Graphic file (type QTm)
@@ -1254,7 +1316,60 @@ File: img_hw1/71-low-pen2.jpg Graphic file (type QTm)
 File: img_hw1/71-low-res1.jpg Graphic file (type QTm)
  <use  "img_hw1/71-low-res1.jpg" > [16]
 File: img_hw1/71-low-res2.jpg Graphic file (type QTm)
- <use  "img_hw1/71-low-res2.jpg" > [17] (./lab3.aux)
+ <use  "img_hw1/71-low-res2.jpg" > [17]
+Underfull \hbox (badness 10000) in paragraph at lines 203--206
+
+ []
+
+File: img_hw2/57-high-pen1.jpg Graphic file (type QTm)
+<use  "img_hw2/57-high-pen1.jpg" > [18]
+File: img_hw2/57-high-pen2.jpg Graphic file (type QTm)
+ <use  "img_hw2/57-high-pen2.jpg" > [19]
+File: img_hw2/57-high-res1.jpg Graphic file (type QTm)
+ <use  "img_hw2/57-high-res1.jpg" > [20]
+File: img_hw2/57-high-res2.jpg Graphic file (type QTm)
+ <use  "img_hw2/57-high-res2.jpg" > [21]
+File: img_hw2/57-low-pen1.jpg Graphic file (type QTm)
+ <use  "img_hw2/57-low-pen1.jpg" > [22]
+File: img_hw2/57-low-pen2.jpg Graphic file (type QTm)
+ <use  "img_hw2/57-low-pen2.jpg" > [23]
+File: img_hw2/57-low-res1.jpg Graphic file (type QTm)
+ <use  "img_hw2/57-low-res1.jpg" > [24]
+File: img_hw2/57-low-res2.jpg Graphic file (type QTm)
+ <use  "img_hw2/57-low-res2.jpg" > [25]
+File: img_hw2/71-high-pen1.jpg Graphic file (type QTm)
+ <use  "img_hw2/71-high-pen1.jpg" > [26]
+File: img_hw2/71-high-pen2.jpg Graphic file (type QTm)
+ <use  "img_hw2/71-high-pen2.jpg" > [27]
+File: img_hw2/71-high-res1.jpg Graphic file (type QTm)
+ <use  "img_hw2/71-high-res1.jpg" > [28]
+File: img_hw2/71-high-res2.jpg Graphic file (type QTm)
+ <use  "img_hw2/71-high-res2.jpg" > [29]
+File: img_hw2/71-low-pen1.jpg Graphic file (type QTm)
+ <use  "img_hw2/71-low-pen1.jpg" > [30]
+File: img_hw2/71-low-pen2.jpg Graphic file (type QTm)
+ <use  "img_hw2/71-low-pen2.jpg" > [31]
+File: img_hw2/71-low-res1.jpg Graphic file (type QTm)
+ <use  "img_hw2/71-low-res1.jpg" > [32]
+File: img_hw2/71-low-res2.jpg Graphic file (type QTm)
+ <use  "img_hw2/71-low-res2.jpg" >
+Underfull \hbox (badness 10000) in paragraph at lines 355--359
+
+ []
+
+[33]
+File: img_hw3/high_pen.jpg Graphic file (type QTm)
+ <use  "img_hw3/high_pen.jpg" > [34]
+File: img_hw3/high_res.jpg Graphic file (type QTm)
+ <use  "img_hw3/high_res.jpg" > [35]
+File: img_hw3/low_pen.jpg Graphic file (type QTm)
+ <use  "img_hw3/low_pen.jpg" > [36]
+File: img_hw3/low_res.jpg Graphic file (type QTm)
+ <use  "img_hw3/low_res.jpg" > [37]
+File: img_hw4/CPD.jpg Graphic file (type QTm)
+ <use  "img_hw4/CPD.jpg" >
+File: img_hw4/CPD-2.jpg Graphic file (type QTm)
+ <use  "img_hw4/CPD-2.jpg" > [38] (./lab3.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1263,12 +1378,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 21582 strings out of 493591
- 424744 string characters out of 6143546
+ 21627 strings out of 493591
+ 425745 string characters out of 6143546
  427451 words of memory out of 5000000
- 24807 multiletter control sequences out of 15000+600000
- 33369 words of font info for 45 fonts, out of 8000000 for 9000
+ 24841 multiletter control sequences out of 15000+600000
+ 30837 words of font info for 45 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
- 48i,6n,72p,10366b,311s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,7n,72p,10366b,313s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on lab3.pdf (17 pages).
+Output written on lab3.pdf (38 pages).
