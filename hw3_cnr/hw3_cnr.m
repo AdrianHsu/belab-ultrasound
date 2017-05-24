@@ -50,6 +50,7 @@ for i = 1:3
     CNR = abs((InMean - OutMean)/(InStd + OutStd));  
     table = [table CNR];
 end
-csv = array2table(table,'VariableNames', {'a15dB', 'b6dB', 'c15dB'}, 'RowNames', {'CNR'});
+
+csv = array2table(table,'VariableNames', {'A15dBto6dB', 'B3dBto3dB', 'C6dBto15dB'}, 'RowNames', {'CNR'});
 id = uint8(ENUM / 3) + 1;
 writetable(csv, strcat(name_enum(id),'.csv'), 'WriteRowNames', true);
