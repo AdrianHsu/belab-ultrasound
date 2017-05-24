@@ -1,20 +1,20 @@
 clear;
 
 DR = 60;
-ENUM = 2;
+ENUM = 8;
 str_enum = ["57-high-pen", "57-high-res", "57-low-pen", "57-low-res", "71-high-pen", "71-high-res", "71-low-pen", "71-low-res"];
 
-dim = [42 428 200 452]; %57, [y1 y2 x1 x2]
-xywh_in = [205 135 30 20]; %57 in
-xywh_out = [205 340 30 20]; %57 out
+% dim = [42 428 200 452]; %57, [y1 y2 x1 x2]
+% xywh_in = [205 135 30 20]; %57 in
+% xywh_out = [205 340 30 20]; %57 out
 
-% dim = [45 430 227 425]; %71
-% xywh_in = [155 158 30 20]; %71 in
-% xywh_out = [155 325 30 20]; %71 out
+dim = [45 430 227 425]; %71
+xywh_in = [155 158 30 20]; %71 in
+xywh_out = [155 325 30 20]; %71 out
 
 xywh = [xywh_in;xywh_out];
-
-tmp = strcat(str_enum(ENUM), '.bmp');
+path = strcat('img/', str_enum(ENUM));
+tmp = strcat(path, '.bmp');
 OriIm = imread(char(tmp));
 GrayIm = double(OriIm);
 GrayIm = GrayIm(dim(1):dim(2),dim(3):dim(4));
@@ -78,5 +78,5 @@ for i = 1:2
     tmp = [Width6dBLal Width6dBAxi];
     table = [table;tmp];
 end
-csv = array2table(table,'VariableNames', {'Lateral', 'Axial'} );
-writetable(csv,'data.csv');
+csv = array2table(table,'VariableNames', {'Lateral', 'Axial'}, 'RowNames', {'In Focus', 'Out Focus'});
+writetable(csv, strcat(str_enum(ENUM),'.csv'), 'WriteRowNames', true);
