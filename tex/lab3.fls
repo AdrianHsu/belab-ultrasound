@@ -53,6 +53,15 @@ INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/fontspec/fontspec.cfg
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/fontspec/fontspec.cfg
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/csvsimple/csvsimple.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/csvsimple/csvsimple.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/base/ifthen.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/base/ifthen.sty
 INPUT /usr/local/texlive/2016/texmf-dist/tex/xelatex/xecjk/xeCJK.sty
 INPUT /usr/local/texlive/2016/texmf-dist/tex/xelatex/xecjk/xeCJK.sty
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/l3packages/xtemplate/xtemplate.sty
@@ -128,4 +137,11 @@ INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/lm/ec-lmr12.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/lm/ec-lmri10.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/lm/ts1lmr.fd
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/lm/ts1lmr.fd
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/lm/ts1-lmr10.tfm
+INPUT img_hw1/57-high-pen.csv
+INPUT img_hw1/57-high-pen1.jpg
+INPUT img_hw1/57-high-pen2.jpg
+INPUT img_hw1/57-high-res.csv
 INPUT lab3.aux
