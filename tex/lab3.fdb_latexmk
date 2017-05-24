@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1495641387 "lab3.tex" "lab3.pdf" "lab3" 1495641389
+["pdflatex"] 1495641571 "lab3.tex" "lab3.pdf" "lab3" 1495641574
   "/usr/local/texlive/2016/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm" 1136768653 1524 4414a8315f39513458b80dfc63bff03a ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm" 1136768653 1512 f21f83efb36853c0b70002322c1ab3ad ""
@@ -139,9 +139,9 @@
   "img_hw3/low_res.jpg" 1495640114 69942 821e589ad83d70a7dd336cc7cded4540 ""
   "img_hw4/CPD-2.jpg" 1495641245 49134 87055aee9a524af289b4c3f86e43d52a ""
   "img_hw4/CPD.jpg" 1495641254 93999 1d316febeaa4bceb9b1f76750e71d915 ""
-  "lab3.aux" 1495641389 5846 43ce0056b4f5a4ad13c03af1f86b004d ""
-  "lab3.tex" 1495641383 13443 16a75841ddfcb066ab3b503ecba141d9 ""
+  "lab3.aux" 1495641573 5846 43ce0056b4f5a4ad13c03af1f86b004d ""
+  "lab3.tex" 1495641574 13443 e3e107505371838c541e9da2366e427c ""
   (generated)
-  "lab3.aux"
   "lab3.log"
+  "lab3.aux"
   "lab3.pdf"
